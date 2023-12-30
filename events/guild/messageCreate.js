@@ -1,7 +1,7 @@
 module.exports = (Discord, client, app, message) => {
     const prefix = '!!'
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
-  
+    if (!message.content.startsWith(prefix) || message.author.bot) {return;}
+
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
     const command = client.prefix_commands.get(cmd)
